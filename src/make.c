@@ -51,7 +51,6 @@ int funcCount(char *src, int ind, int reg) {
 int make(FILE* dest, char *src) {
     init(dest);
     int reg = 3;
-    int ptr = 1;
     int trueAddr = 0;
     for (int i = 0; i < strlen(src); i++) {
         switch (src[i]) {
