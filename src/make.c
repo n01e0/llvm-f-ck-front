@@ -70,13 +70,11 @@ int make(FILE* dest, char *src) {
                 fprintf(dest, "  %%%d = load i8*, i8** %%1, align 8\n", reg++);
                 fprintf(dest, "  %%%d = getelementptr inbounds i8, i8* %%%d, i32 1\n", reg, reg-1);
                 fprintf(dest, "  store i8* %%%d, i8** %%1, align 8\n", reg++);
-                ptr = reg - 3;
                 break;
             case PTR_DEC:
                 fprintf(dest, "  %%%d = load i8*, i8** %%1, align 8\n", reg++);
                 fprintf(dest, "  %%%d = getelementptr inbounds i8, i8* %%%d, i32 -1\n", reg, reg-1);
                 fprintf(dest, "  store i8* %%%d, i8** %%1, align 8\n", reg++);
-                ptr = reg - 3;
                 break;
             case INPUT:
                 fprintf(dest, "  %%%d = call i32 @getchar()\n", reg++);
